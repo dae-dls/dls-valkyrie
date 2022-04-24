@@ -1,0 +1,40 @@
+package:
+  name: dls-valkyrie-lib
+  version: "3.4.8"
+
+source:
+  # Relative path to the parent directory of the recipe.
+  path: ..
+
+build:
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - pip
+    - python >=3.6
+  run:
+    - python >=3.6
+    - pyzmq
+    - numpy
+    - websockets
+
+test:
+  imports:
+    - dls_valkyrie_lib
+  requires:
+    - pip
+  commands:
+    - pip check
+    - python3 -m dls_valkyrie_lib.version --json
+
+about:
+  home: https://gitlab.dls.lu.se/kits-dls/dls-valkyrie-lib
+  license: LGPL-3.0-or-later
+  license_file: ../LICENSE.txt
+  summary: Python library which implements a simple carrier-independent interface for unidirectional data flow.
+  description: |
+    The data acquisition developer needs a way to transfer streaming data from point of acquisition to a receiver for processing or saving.
+    It is important that different sending and receiving programs talk the same protocol, and that this be robust, reliable and reusable.
+    This library implements a high level layer for fast data transfer which which wraps details of the underlying carrier.

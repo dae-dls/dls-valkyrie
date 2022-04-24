@@ -1,0 +1,33 @@
+{
+    "log":
+    {
+        "level": "DEBUG"
+    },
+
+    "controls":
+    {
+        "control1":
+        {
+            "class_name": "dls::protocolj::zmq_reqrep",
+            "endpoint": "tcp://*:15030"
+        },
+        "control2":
+        {
+            "class_name": "dls::protocolj::simple_http",
+            "endpoint": "http://*:15038",
+            "html_directory": "exercises/11-proxy/html"
+        }
+    },
+
+    "reader":
+    {
+        "class_name": "dls_::valkyrie::zmq_pubsub",
+        "endpoint": "tcp://localhost:15001"
+    },
+
+    "writer":
+    {
+        "class_name": "dls_::valkyrie::websockets",
+        "endpoint": "ws://*:15008"
+    }
+}

@@ -1,0 +1,8 @@
+include:
+  - project: 'kits-dls/cfg-dls-gitlabci'
+    file: '/.python-ci.yml'
+
+test-python36:
+  # Fail pipeline if any unit test fails.
+  allow_failure: false
+

@@ -1,0 +1,12 @@
+*.pyc
+__pycache__
+
+*.odg#
+
+
+*.odt#
+
+.cache/
+.coverage
+
+gitrun-unittest.log

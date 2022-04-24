@@ -1,0 +1,9 @@
+{
+    "log":
+    {
+        "level": "DEBUG"
+    },
+  
+    "sync_incidents": {}
+
+}

@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <link rel="stylesheet" href="styles.css">
+
+        <script src="proxy.js"></script>
+    </head>
+
+    <body>
+        <div class="title">
+            <div class="logo">
+                <img src="logo.png">
+            </div>
+            <div class="text">
+                CoboldPC XYT Proxy (ZMQ ---&gt; Websockets) Service
+            </div>
+        </div>
+
+        <div class="buttons">
+            <div class="button"><button id="get_incident_summaries_button">Get Incident Summaries</button></div>
+        </div>
+
+        <div class="response_container">
+            <div class="response"><xmp id="response">please click a button above</xmp></div>
+        </div>
+
+        <div class="incident_summaries_container">
+            <div class="border">
+                <div>Incident Summaries</div>
+                <div id="incident_summaries"></div>
+            </div>
+        </div>
+        
+    </body>
+</html>

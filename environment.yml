@@ -1,0 +1,9 @@
+# Environment created in gitlab for running the unit tests.
+# This must be a complete list, as is replaces the normal dependencies included by the gitlab ci template.
+# After all this is installed from conda, then pip will install dependencies defined in setup.py.
+
+dependencies:
+  - python=3.9
+  - pytest
+  - websockets
+
