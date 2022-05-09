@@ -52,8 +52,8 @@ list:
 	@awk "/^[^\t:]+[:]/" Makefile | grep -v ".PHONY"
 
 show-version:
-	PYTHONPATH=$(PYTHONPATH) python3 dls_valkyrie_lib/version.py --json
-	PYTHONPATH=$(PYTHONPATH) python3 dls_valkyrie_lib/version.py
+	PYTHONPATH=$(PYTHONPATH) python3 -m dls_valkyrie_lib.version --json
+	PYTHONPATH=$(PYTHONPATH) python3 -m dls_valkyrie_lib.version
 
 # ------------------------------------------------------------------
 # Version bumping.  Configured in setup.cfg. 

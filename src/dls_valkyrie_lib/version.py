@@ -9,7 +9,6 @@ import dls_valkyrie_lib
 def version():
     """
     Current version.
-    DO NOT CHANGE THE NEXT LINE, since bumpversion expects it exactly.
     """
 
     return dls_valkyrie_lib.__version__
