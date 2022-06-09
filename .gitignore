@@ -10,3 +10,6 @@ __pycache__
 .coverage
 
 gitrun-unittest.log
+
+build/
+dls_valkyrie.egg-info/

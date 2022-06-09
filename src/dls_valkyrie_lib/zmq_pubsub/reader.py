@@ -46,7 +46,7 @@ class Reader:
         if not self.is_activated:
             endpoint = self.configuration["endpoint"]
 
-            logger.info(
+            logger.debug(
                 "%s connecting with recv_timeout_milliseconds %d"
                 % (self.descriptor, self.recv_timeout_milliseconds)
             )

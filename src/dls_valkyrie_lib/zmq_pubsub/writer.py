@@ -17,13 +17,14 @@ class Writer:
 
         try:
             # Get configured high water mark.
-            # This is how much to keep in the send buffer.  
+            # This is how much to keep in the send buffer.
             # Recommend low, even 1 should be ok unless a slow reader.
-            self._high_water_mark = int(
-                configuration.get("high_water_mark", 10)
-            )
+            self._high_water_mark = int(configuration.get("high_water_mark", 10))
         except Exception as exception:
-            raise RuntimeError("%s unable to get high_water_mark from configuration" % (self.descriptor))
+            raise RuntimeError(
+                "%s unable to get high_water_mark from configuration"
+                % (self.descriptor)
+            )
 
     # ----------------------------------------------------------------
     def __del__(self):
@@ -54,7 +55,10 @@ class Writer:
         if not self.is_activated:
             endpoint = self.configuration["endpoint"]
 
-            logger.info("%s binding with high_water_mark %d" % (self.descriptor, self._high_water_mark))
+            logger.debug(
+                "%s binding with high_water_mark %d"
+                % (self.descriptor, self._high_water_mark)
+            )
 
             self.socket.bind(endpoint)
 
