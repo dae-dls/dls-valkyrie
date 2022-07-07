@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 def main():
     name = "dls-valkyrie"
-    version = "4.1.3"
+    version = "4.1.4"
     description = "Valkyrie library."
     author = "David Erb"
     author_email = "david.erb@diamond.ac.uk"

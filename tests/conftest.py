@@ -7,7 +7,7 @@ import json
 from dls_valkyrie_lib.version import meta as version_meta
 
 # Formatting of testing log messages.
-from logging_formatter.logging_formatter import LoggingFormatter
+from dls_logform.dls_logform import DlsLogform
 
 import logging
 
@@ -24,12 +24,13 @@ def logging_setup(request):
     print("")
 
     handler = logging.StreamHandler()
-    handler.setFormatter(LoggingFormatter())
+    handler.setFormatter(DlsLogform())
     logging.getLogger().addHandler(handler)
     logging.getLogger().setLevel(logging.DEBUG)
 
     # Cover the version.
     logger.info("\n%s", (json.dumps(version_meta(), indent=4)))
+
 
 # --------------------------------------------------------------------------------
 @pytest.fixture(scope="function")

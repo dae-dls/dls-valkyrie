@@ -1,6 +1,11 @@
+# Path for testing if these dependencies are not installed.
+PYTHONPATH=src:../dls-mainiac/src:../dls-logform/src
 
 # ------------------------------------------------------------------
 # Tests.
+
+pytest:
+	PYTHONPATH=$(PYTHONPATH) python3 -m pytest
 
 test-01-writer_reader:
 	python3 -m pytest -sv -rfp --tb=line tests/01-writer_reader/test_01.py

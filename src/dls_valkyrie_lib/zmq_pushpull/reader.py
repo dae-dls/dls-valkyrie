@@ -20,12 +20,13 @@ class Reader:
 
         try:
             # Get configured high water mark.
-            # This is how much to keep in the send buffer.  
-            self._high_water_mark = int(
-                configuration.get("high_water_mark", 10000)
-            )
+            # This is how much to keep in the send buffer.
+            self._high_water_mark = int(configuration.get("high_water_mark", 10000))
         except Exception as exception:
-            raise RuntimeError("%s unable to get high_water_mark from configuration" % (self.descriptor))
+            raise RuntimeError(
+                "%s unable to get high_water_mark from configuration"
+                % (self.descriptor)
+            )
 
     # ----------------------------------------------------------------
     def __del__(self):
@@ -60,7 +61,11 @@ class Reader:
 
             logger.info(
                 "%s connecting with recv_timeout_milliseconds %d and high_water_mark %s"
-                % (self.descriptor, self.recv_timeout_milliseconds, self._high_water_mark)
+                % (
+                    self.descriptor,
+                    self.recv_timeout_milliseconds,
+                    self._high_water_mark,
+                )
             )
             self.socket.connect(endpoint)
 
